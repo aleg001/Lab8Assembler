@@ -1,3 +1,8 @@
+/* Universidad del Valle de Guatemala
+   Organización de Computadoras y Assembler
+   Alejandro Jose Gomez Hernandez 20347*
+   Gabriela Paola Contreras Guerra 20213*/
+   
 .global main
 .type main,%function
 main:

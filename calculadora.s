@@ -74,7 +74,7 @@ main:
 
 	
 	calculo1:
-	/* Se */
+	/* Se realiza proceso de suma */
 		ldr r0,=datoIng
 		ldr r0,[r0]  //empuja parametro a r0
 		ldr r1,=resultado 
@@ -85,6 +85,7 @@ main:
 		b opcionMenu 
 		
 	calculo2:
+	/* Se realiza proceso de mutltiplicacion */
 		ldr r0,=datoIng
 		ldr r0,[r0]  //empuja parametro a r0
 		ldr r1,=resultado
@@ -93,6 +94,7 @@ main:
 		mov r1,r0
 		
 	calculo3:
+		/* Se realiza proceso de divison para modulo */
 		ldr r0,=datoIng
 		ldr r0,[r0]  //empuja parametro a r0
 		ldr r1,=resultado

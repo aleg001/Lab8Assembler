@@ -26,6 +26,7 @@ multiplicacion:
 	mov r0,r4
 	mov pc,lr
 	
+/* Se define la subrutina correspondiente al proceso de modulo*/
 .global modulo
 modulo:
 	mov r2,#0
@@ -34,6 +35,34 @@ modulo:
 	add r2,#1
 	mov pc, lr
 	b modulo
+
+
+.global modulopruebas
+
+modulopruebas:
+
+/* TODAVIA NO ESTA PROBADO
+	Basado en division hecha en clase.
+	Modificada para realizar procesos */
+	mov r7,lr
+	ldr r0,=datoIng
+	ldr r0,[r0]
+
+	ldr r3,=resultado
+	ldr r3,[r3]
+
+	mov r2,#0
+	divisionC:
+		cmp r1, r3
+		bgt salirDiv
+		sub r3,#1
+		b division
+	salirDiv:
+		ldr r9,=resultado
+		str r3,[r9]
+		mov r0,r3
+		mov pc, r7
+
 	
 .global potencia
 
