@@ -1,4 +1,4 @@
-/* Universidad del Valle de Guatemala
+/* Universidad del Valle de Guatemala2
    Organización de Computadoras y Assembler
    Alejandro Jose Gomez Hernandez 20347*
    Gabriela Paola Contreras Guerra 20213*/
@@ -12,17 +12,17 @@ main:
 	stmfd sp!,{lr}
 	/*Ingreso de un numero por el usuario*/
 	ingresoDatos:
-		ldr r0,=stringIngreso
-		bl puts
-		ldr r0,=formatos
-		ldr r1,=datoIng
-		bl scanf
+		# ldr r0,=stringIngreso
+		# bl puts
+		# ldr r0,=formatos
+		# ldr r1,=datoIng
+		# bl scanf
 			
 	/*Ingreso de la opcion del menu */
 	opcionMenu:
 		ldr r0,=stringmenu
 		bl puts
-		ldr r0,=formatos
+		ldr r0,=formatosc		// EL FORMATO AHORA ES %C PARA QUE COINCIDA EN QUE EL CARACTER OCUPA SOLO 1 BYTE
 		ldr r1,=opcion
 		bl scanf
 		
@@ -30,7 +30,7 @@ main:
 	Revisa que el numero ingresado sea correcto*/
 	//Store 
 	ldr r5,=opcion
-	ldrb r5,[r2]
+	ldrb r2,[r5]			// UDS TENÍAN: ldrb r5,[r2]
 	bne escoger
 	bl getchar	/*para que el programa lea <enter> para continuar*/
 	b opcionMenu
@@ -168,6 +168,7 @@ resultado:		.word	0
 opcion:			.byte 	0
 
 formatos:		.asciz	"%d"
+formatosc:		.asciz	"%c"
 stringmenu:		.asciz "-------Bienvenido a la calculadora------\n + Suma\n * Multiplicación\n M Módulo\n P Potencia\n = Mostrar Resultado \n 1 Ingresar una cadena \n 2 Ingresar segunda cadena \n C Concatenar cadenas \n q Salir \n"
 stringIngreso:	.asciz	"Ingrese un numero: "
 stringConc:		.asciz "Ingrese la cadena de texto"
