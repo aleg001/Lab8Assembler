@@ -116,7 +116,7 @@ main:
 		ldr r1,[r6]
 		ldr r0,= cadena
 		bl printf
-		ldr r2,[r7]
+		ldr r1,[r7]
 		ldr r0,=cadena2
 		bl printf
 		
