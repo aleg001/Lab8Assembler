@@ -2,6 +2,8 @@
    Organización de Computadoras y Assembler
    Alejandro Jose Gomez Hernandez 20347*
    Gabriela Paola Contreras Guerra 20213*/
+
+   
    
 .global main
 .type main,%function
@@ -103,6 +105,7 @@ main:
 		mov r1,r0
 	
 	calculo4:
+		/* Se realiza proceso para potenciar un numero*/
 		ldr r0,=datoIng
 		ldr r0,[r0]  //empuja parametro a r0
 		ldr r1,=resultado
@@ -111,6 +114,7 @@ main:
 		mov r1,r0
 	
 	mostrar:
+		/* Se imprime resultado almacenado*/
 		ldr r0,=formato	// formato cuadrado  
 		bl printf
 		

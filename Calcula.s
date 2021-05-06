@@ -2,7 +2,11 @@
    Organización de Computadoras y Assembler
    Alejandro Jose Gomez Hernandez 20347*
    Gabriela Paola Contreras Guerra 20213*/
-   
+
+
+
+/* DEBUG DEL PROGRAMA PRINCIPAL */
+
 .global main
 .type main,%function
 main:
