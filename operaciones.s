@@ -46,17 +46,17 @@ modulopruebas:
 	Modificada para realizar procesos */
 	
 	division:
-		cmp divisor, dividendo
+		cmp r0, r1
 		bgt salirDiv
-		sub dividendo, divisor
+		sub r7, r1
 		add r8,#1
 		b division
 
 	salirDiv:
-		mul divisor, divisor, r8
-		mov dividendo, r9
-		sub dividendo, divisor
-		mov r1, dividendo
+		mul r1, r1, r8
+		mov r1, r9
+		sub r1, r1
+		mov r7, r1
 		bl printf
 		mov pc, r7
 
