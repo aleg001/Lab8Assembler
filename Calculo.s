@@ -100,7 +100,9 @@ main:
 		ldr r0, =cadena
 		ldr r1,=cadIng
 		bl scanf
-		Mov r6,r1
+		ldr r6,=cadIng
+		ldr r6,[r6]
+		//Mov r6,r1
 		b Menu
 
 	Operacion2c:
@@ -109,7 +111,9 @@ main:
 		ldr r0, =cadena2
 		ldr r1,=cadIng
 		bl scanf
-		Mov r7,r1
+		ldr r7,=cadIng
+		ldr r7,[r7]
+		//Mov r7,r1
 		b Menu
 		
 	Concatenar:
