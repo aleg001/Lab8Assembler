@@ -58,9 +58,9 @@ potencia:
 	eleva:
 		mul r1,r1,r1
 		sub r0,#1
-		cmp r0,#0
-		beq saleleva
-		b eleva
-	saleleva:
+		cmp r0,#0 
+		bge saleleva
+
+	saleleva: 
 		mov r0,r1
 		mov pc,lr

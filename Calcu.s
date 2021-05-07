@@ -251,7 +251,6 @@ Calculo4:
 .data
 .align 2
 
-formato_final:		.asciz "El resultado de la opcion selecionada es: %s\n"
 datoI:				.word	0 /*Dato ingresado por el usuario*/
 cadIng:				.asciz "                           "
 dato2:				.word	0 /*Almacena Resultado*/
@@ -266,7 +265,7 @@ cadena2:			.asciz "%s\n"
 
 				/*Messages that are showed to the user*/
 stringwelcome:	.asciz "-------Bienvenido a la calculadora------\n"
-stringmenu:		.asciz " + Suma\n * Multiplicación\n M Módulo\n P Potencia\n = Mostrar Resultado \n 1 Ingresar una cadena \n 2 Ingresar segunda cadena \n C Concatenar cadenas \n q Salir \n"
+stringmenu:		.asciz "\n + Suma\n * Multiplicación\n M Módulo\n P Potencia\n = Mostrar Resultado \n 1 Ingresar una cadena \n 2 Ingresar segunda cadena \n C Concatenar cadenas \n q Salir \n"
 stringIngreso:	.asciz	"Ingrese una opcion: "
 resultado: 		.asciz "La respuesta es: %d\n"
 ingreso_op: 	.asciz "Ingrese un número: "
