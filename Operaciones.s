@@ -43,7 +43,8 @@ modulo:
 		sub r1,r0
 		add r7,#1
 		b division
-
+		
+/*Rutina para salir del ciclo anterior y guardar datos*/ 
 	salirDiv:
 		mul r0,r0,r7
 		mov r6,r8
@@ -60,7 +61,7 @@ potencia:
 		sub r0,#1
 		cmp r0,#0 
 		bge saleleva
-
+/*Rutina para salir del ciclo anterior y guardar datos*/ 
 	saleleva: 
 		mov r0,r1
 		mov pc,lr
