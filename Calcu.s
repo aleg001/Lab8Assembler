@@ -142,7 +142,7 @@ main:
 		ldr r0,= resultado 
 		ldr r2,= dato2 
 		str r1,[r2]
-		//bl printf
+		bl printf
 		b Menu
 
 Calculo4:
@@ -183,42 +183,52 @@ Calculo4:
 		b Menu
 		
 	Operacion1c:
-		ldr r0,=ingreso_da	
-		bl puts
-		
-		ldr r0, =cadena
-		ldr r1,=cadIng
-		bl scanf
-		bl getchar
-		
-		ldr r1,=cadIng
-		ldr r1,[r1]
+        ldr r0,=ingreso_da
+        bl puts
 
-		//Mov r6,r1
-		b Menu
+        ldr r0, =cadena
+        ldr r1,=cadIng
+        bl scanf
+        bl getchar
+
+        ldr r1,=cadIng
+        ldr r1,[r1]
+
+        //Mov r6,r1
+
+        b Menu
 
 
 
-	Operacion2c:
-		ldr r0,=ingreso_da	
-		bl puts
-		ldr r0, =cadena
-		ldr r1,=cadIng
-		bl scanf
-		bl getchar
-		
-		ldr r7,=cadIng
-		ldr r7,[r7]
-		//Mov r7,r1
-		b Menu
-		
-	Concatenar:
-		ldr r0,= cadena
-		ldr r1,[r6]
-		bl printf
-		ldr r0,=cadena2
-		ldr r1,[r7]
-		bl printf
+
+    Operacion2c:
+        ldr r0,=ingreso_da
+        bl puts
+        ldr r0, =cadena
+        ldr r1,=cadIng2
+        bl scanf
+        bl getchar
+
+        ldr r7,=cadIng2
+        ldr r7,[r7]
+        //Mov r7,r1
+
+        b Menu
+
+    Concatenar:
+        mov r6, r0
+        mov r7, r1
+        ldr r0,= cadIng
+        mov r1, r6
+        bl printf
+        bl getchar
+
+        ldr r0,= cadIng2
+        mov r1,r7
+        bl printf
+
+        bl getchar
+        b Menu
 		
 /************************ PROGRA DEFENSIVA ****************************/
 	
@@ -253,6 +263,7 @@ Calculo4:
 
 datoI:				.word	0 /*Dato ingresado por el usuario*/
 cadIng:				.asciz "                           "
+cadIng2:			.asciz "                           "
 dato2:				.word	0 /*Almacena Resultado*/
 
 
@@ -263,7 +274,7 @@ cadena:				.asciz "%s"
 cadena2:			.asciz "%s\n"
 
 
-				/*Messages that are showed to the user*/
+/**************** Messages that are showed to the user ***************/
 stringwelcome:	.asciz "-------Bienvenido a la calculadora------\n"
 stringmenu:		.asciz "\n + Suma\n * Multiplicación\n M Módulo\n P Potencia\n = Mostrar Resultado \n 1 Ingresar una cadena \n 2 Ingresar segunda cadena \n C Concatenar cadenas \n q Salir \n"
 stringIngreso:	.asciz	"Ingrese una opcion: "
